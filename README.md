@@ -12,30 +12,35 @@ of Lean), which may be of use in their own right.
 This repository is based on [cgaljs](https://github.com/marcosscriven/cgaljs).
 
 
-Dependencies
-------------
+Required Packages
+-----------------
 
-* Emscripten (and all its requirements including Python, Clang, Java, and NodeJS)
-* Emscripten tools must be on the path
-* Linux build tools
-
+[Emscripten](https://github.com/kripken/emscripten)
+```bash
+sudo apt-get update
+sudo apt-get install build-essential cmake python2.7 nodejs default-jre git wget m4
+sudo apt-get install nodejs-legacy    # If the executable of node.js is `nodejs` instead of `node`
+wget https://s3.amazonaws.com/mozilla-games/emscripten/releases/emsdk-portable.tar.gz
+tar xvf emsdk-portable.tar.gz
+cd emsdk_portable
+./emsdk update
+./emsdk install latest
+./emsdk activate latest
+```
 
 To get started
 --------------
 
-* Clone the Git repo
-* Run the build_all.py script
-* You should find the generated libs in the libs dir, and includes for each dependency in the includes dir
-* In examples there's a simple test script you can run to demontrate the output running in NodeJS
+```bash
+git clone https://github.com/soonhokong/build.lean.js
+cd build.lean.js
+make
+```
+
+You should find the generated libraries in the `libs` dir, and includes for each dependency in the `includes` dir.
 
 
 Issues & Limitations
 --------------------
 
-* This is only the CGAL core. The QT visualisation components have not been done.
-* There is no way to tell Javascript how to round floating point ops, so currently non-simple CGAL kernels will likely produce assertion errors (hence the need to patch FPU.h)
-* It is *not* a Javascript library - only a tool to prepare the CGAL library and its dependencies for use with Emscripten
-* The dependency on Boost Thread has been removed (for obvious reasons)
-* Generated Javascript code is a little large. Experiment with -O2 and -O3 Emscripten optimisation settings)
-
-NB Emscripten Git revision at time of writing:230c0e80dfcd44870bec3254c399db430f6e1d98
+ *
