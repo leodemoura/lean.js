@@ -12,13 +12,11 @@ if not os.path.exists(LIBS_DIR):
     os.makedirs(LIBS_DIR)
 
 COMPONENTS = [
-    'boost',
     'gmp',
     'mpfr',
-    'cgal',
+    'lua',
+    'lean'
 ]
 
 for component in COMPONENTS:
     build_component(component, INCLUDES_DIR, LIBS_DIR)
-
-
