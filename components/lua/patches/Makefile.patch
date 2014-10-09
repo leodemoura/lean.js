@@ -1,0 +1,17 @@
+--- Makefile.original	2011-11-15 15:38:12.000000000 -0800
++++ Makefile	2014-10-09 09:57:46.179514517 -0700
+@@ -36,12 +36,12 @@
+ # == END OF USER SETTINGS -- NO NEED TO CHANGE ANYTHING BELOW THIS LINE =======
+ 
+ # Convenience platforms targets.
+-PLATS= aix ansi bsd freebsd generic linux macosx mingw posix solaris
++PLATS= aix ansi bsd freebsd generic linux macosx mingw posix solaris emscripten
+ 
+ # What to install.
+ TO_BIN= lua luac
+ TO_INC= lua.h luaconf.h lualib.h lauxlib.h lua.hpp
+-TO_LIB= liblua.a
++TO_LIB= liblua.a liblua.so
+ TO_MAN= lua.1 luac.1
+ 
+ # Lua version and release.
