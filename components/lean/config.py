@@ -13,6 +13,7 @@ CONFIGURE_CMD = ' '.join([
     '-DCMAKE_TOOLCHAIN_FILE={component_dir}/cmake-emcc-toolchain.txt',
     '-DCMAKE_BUILD_TYPE=Release',
     '-DTCMALLOC=OFF',
+    '-DMULTI_THREAD=OFF',
     '-DCMAKE_CXX_FLAGS="-v -U__SSE2_MATH__ --ignore-dynamic-linking -U__GNUG__"',
     'src/'
 ])
