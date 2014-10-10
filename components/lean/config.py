@@ -1,6 +1,6 @@
 NAME = 'lean'
 VERSION = '0.2.0'
-DOWNLOADS = ['https://github.com/soonhokong/lean/archive/master.zip']
+DOWNLOADS = ['https://github.com/soonhokong/lean/archive/master.tar.gz']
 SOURCE_DIR = 'lean-master'
 CONFIGURE_CMD = ' '.join([
     'cmake',
