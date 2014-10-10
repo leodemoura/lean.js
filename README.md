@@ -28,6 +28,12 @@ cd emsdk_portable
 ./emsdk activate latest
 ```
 
+We need to cross-compile targetting to a 32-bit architecture (i.e. i686).
+```
+./emsdk install clang-master-32bit
+./emsdk install sdk-master-32bit
+```
+
 To get started
 --------------
 
