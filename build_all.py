@@ -1,5 +1,6 @@
 #!/usr/bin/python
 import os
+import sys
 from tools.build import build_component
 
 INCLUDES_DIR = 'includes'
@@ -18,5 +19,5 @@ COMPONENTS = [
     'lean'
 ]
 
-for component in COMPONENTS:
+for component in sys.argv[1:]:
     build_component(component, INCLUDES_DIR, LIBS_DIR)
