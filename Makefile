@@ -26,18 +26,13 @@ build/lean/source/lean-master/library.tar.gz: build/lean/source/lean-master/shel
 	cd build/lean/source/lean-master && tar cvfz library.tar.gz `find library -name "*.olean"` 
 
 build/lean/source/lean-master/shell/lean:
-	python build_all.py lean
-	emmake make -C build/lean/source/lean-master/
-	emmake make -C build/lean/source/lean-master/
-	emmake make -C build/lean/source/lean-master/
+	python build_all.py lean || emmake make -C build/lean/source/lean-master/ || emmake make -C build/lean/source/lean-master/ || emmake make -C build/lean/source/lean-master/
 
 build/lean_js/source/lean-master/shell/lean.js: gmp mpfr lua build/lean/source/lean-master/library.tar.gz
 	python build_all.py lean_js
 	cd build/lean_js/source/lean-master/shell && tar xvfz ../../../../lean/source/lean-master/library.tar.gz
 	rm -rf build/lean_js/source/lean-master/shell/lean.*
-	emmake make -C build/lean_js/source/lean-master/
-	emmake make -C build/lean_js/source/lean-master/
-	emmake make -C build/lean_js/source/lean-master/
+	emmake make -C build/lean_js/source/lean-master/ || emmake make -C build/lean_js/source/lean-master/ || emmake make -C build/lean_js/source/lean-master/
 
 install:
 	cp -v build/lean_js/source/lean-master/shell/lean.*  $(INSTALL_PREFIX)

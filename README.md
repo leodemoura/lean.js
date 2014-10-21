@@ -1,24 +1,37 @@
-build.lean.js
-=============
+lean.js
+=======
+
+LIVE DEMO: https://leanprover.github.com/live
 
 This is a project to aid porting [Lean](http://leanprover.github.io/)
 code to Javascript using an amazing tool called
-[Emscripten](https://github.com/kripken/emscripten)
-
-It includes an Emscripten build for [GMP](http://gmplib.org/),
+[Emscripten](https://github.com/kripken/emscripten). It includes an
+Emscripten build for [GMP](http://gmplib.org/),
 [MPFR](http://www.mpfr.org/), and [LUA](http://lua.org) (dependencies
-of Lean), which may be of use in their own right.
+of Lean), which may be of use in their own right. This repository is
+based on [cgaljs](https://github.com/marcosscriven/cgaljs).
 
-This repository is based on [cgaljs](https://github.com/marcosscriven/cgaljs).
+
+Note that this package only works on **32-bit** virtual machines. We
+have tested it on Ubuntu-14.04 (32-bit) machines.
+
+We host the latest version of compiled javascript at
+[gh-pages](https://github.com/leanprover/lean.js/tree/gh-pages) branch
+of this repository. You can link the compiled javascript from your
+HTML code:
+
+```html
+<script src="https://leanprover.github.io/lean.js/lean.js" type="text/javascript" charset="utf-8"></script>
+```
 
 
-Required Packages
------------------
+Required Packages (on Ubuntu-14.04)
+-----------------------------------
 
-[Emscripten](https://github.com/kripken/emscripten)
 ```bash
 sudo apt-get update
 sudo apt-get install build-essential cmake python2.7 nodejs default-jre git wget m4
+sudo apt-get install libgmp-dev libmpfr-dev liblua5.2-dev clang-3.3
 sudo apt-get install nodejs-legacy    # If the executable of node.js is `nodejs` instead of `node`
 wget https://s3.amazonaws.com/mozilla-games/emscripten/releases/emsdk-portable.tar.gz
 tar xvf emsdk-portable.tar.gz
@@ -28,13 +41,7 @@ cd emsdk_portable
 ./emsdk activate latest
 ```
 
-We need to cross-compile targetting to a 32-bit architecture (i.e. i686).
-```
-./emsdk install clang-master-32bit
-./emsdk install sdk-master-32bit
-```
-
-To get started
+Build lean.js
 --------------
 
 ```bash
@@ -43,10 +50,6 @@ cd build.lean.js
 make
 ```
 
-You should find the generated libraries in the `libs` dir, and includes for each dependency in the `includes` dir.
-
-
-Issues & Limitations
---------------------
-
- *
+The generated ``lean.js``, ``lean.data``, and ``lean.js.mem`` files
+are located at ``build/lean_js/source/lean-master/shell`` directory.
+``make install`` will copy those files to ``INSTALL_PREFIX``.
