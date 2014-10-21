@@ -35,7 +35,7 @@ build/lean_js/source/lean-master/shell/lean.js: gmp mpfr lua build/lean/source/l
 	emmake make -C build/lean_js/source/lean-master/ || emmake make -C build/lean_js/source/lean-master/ || emmake make -C build/lean_js/source/lean-master/
 
 install:
-	cp -v build/lean_js/source/lean-master/shell/lean.*  $(INSTALL_PREFIX)
+	cp -v build/lean_js/source/lean-master/shell/lean.js  $(INSTALL_PREFIX)
 
 clean:
 	rm -rf build libs includes
