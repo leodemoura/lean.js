@@ -12,12 +12,5 @@ if not os.path.exists(INCLUDES_DIR):
 if not os.path.exists(LIBS_DIR):
     os.makedirs(LIBS_DIR)
 
-COMPONENTS = [
-    'gmp',
-    'mpfr',
-    'lua',
-    'lean'
-]
-
 for component in sys.argv[1:]:
     build_component(component, INCLUDES_DIR, LIBS_DIR)
