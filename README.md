@@ -44,6 +44,13 @@ cd emsdk_portable
 Build lean.js
 --------------
 
+Make sure that you have the following line on your `~/.bashrc`.
+
+```bash
+source ~/PATH/TO/emsdk_portable/emsdk_set_env.sh
+```
+
+Execute the following script to checkout and build lean.js.
 ```bash
 git clone https://github.com/leanprover/lean.js
 cd lean.js
