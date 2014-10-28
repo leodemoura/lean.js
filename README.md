@@ -45,11 +45,13 @@ Build lean.js
 --------------
 
 ```bash
-git clone https://github.com/soonhokong/build.lean.js
-cd build.lean.js
+git clone https://github.com/leanprover/lean.js
+cd lean.js
 make
 ```
 
 The generated ``lean.js``, ``lean.data``, and ``lean.js.mem`` files
 are located at ``build/lean_js/source/lean-master/shell`` directory.
 ``make install`` will copy those files to ``INSTALL_PREFIX``.
+
+``make push`` will destructively update the ``gh-pages`` branch of ``origin`` repository.
