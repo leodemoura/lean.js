@@ -57,7 +57,5 @@ cd lean.js
 make
 ```
 
-The generated ``lean.js`` file is located at ``build/lean_js/source/lean-master/shell`` directory.
-``make install`` will copy those files to ``INSTALL_PREFIX``.
-
-``make push`` will destructively update the ``gh-pages`` branch of ``origin`` repository.
+ - The generated ``lean.js`` file is located at ``build/lean_js/source/lean-master/shell`` directory.
+ - ``make push`` will destructively update the ``gh-pages`` branch of ``origin`` repository.
