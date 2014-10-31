@@ -16,11 +16,14 @@ build/lean/source/lean-master/library.tar.gz: build/lean/source/lean-master/shel
 	cd build/lean/source/lean-master/library && ../bin/linja clean && ../bin/linja -X 
 	cd build/lean/source/lean-master && tar cvfz library.tar.gz `find library -name "*.olean"` 
 
-gmp: libs/libgmp.so
+gmp:
+	python build_all.py gmp
 
-mpfr: libs/libmpfr.so
+mpfr:
+	python build_all.py mpfr
 
-lua: libs/liblua.so
+lua:
+	python build_all.py lua
 
 push: 
 	git checkout gh-pages
